@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超算平台</title>
+	<link rel="stylesheet" href="/${res}/css/style.css">
+</head>
+<body>
+[#include "header.html"/]
+	<div class="header">
+		<div class="header_ct">
+			<ul class="mainmenu">
+				<li>
+					<a href="index.jhtml">首页</a>
+				</li>
+				<li>
+					<a href="product.jhtml">产品服务</a>
+				</li>
+				[#if user??]
+				<li>
+					<a href="business.jhtml">业务办理</a>
+				</li>
+				[/#if]
+				<li class="on">
+					<a href="platform.jhtml">平台管理</a>
+				</li>
+				<li>
+					<a href="about.jhtml">关于我们</a>
+				</li>
+				<li>
+					<a href="contact.jhtml">联系我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="business">
+			<div class="business_title">
+				用户管理
+			</div>
+			<div class="business_ct">
+				<table class="std txtcenter">
+					<thead class="thead_bg">
+						<tr>
+							<td>用户名</td>
+							<td>状态</td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<!--<tr>
+						<td>小小明</td>
+						<td>待审核</td>
+						<td><a href="#" class="edit_btn">批准</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>
+					<tr>
+						<td>小小明</td>
+						<td>待审核</td>
+						<td><a href="#" class="edit_btn">批准</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>
+					<tr>
+						<td>小小明</td>
+						<td>待审核</td>
+						<td><a href="#" class="edit_btn">批准</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>-->
+					[#if users?size gt 0]
+					[#list users as user]
+					<tr>
+						<td>${user.username}</td>
+						<td>${user.disabled?string("待审核","己审核")}</td>
+						[#if user.disabled==true]
+						<td><a href="#" onclick="javascript:euser(${user.id}, 'edit')" class="edit_btn">批准</a><a href="#" onclick="javascript:euser(${user.id}, 'dele')" class="dele_btn">删除</a></td>
+						[#else]
+						<td><a href="#" class="edit_btn">己审核</a><a href="#" onclick="javascript:euser(${user.id}, 'dele')" class="dele_btn">删除</a></td>
+						[/#if]
+
+					</tr>
+					[/#list]
+					[/#if]
+				</table>
+				<form id="edit_form" action="" method="post">
+				</form>
+			</div>
+
+			<div class="business_title">
+				任务管理
+			</div>
+			<div class="business_ct">
+				<table class="std txtcenter">
+					<thead class="thead_bg">
+						<tr>
+							<td>任务名</td>
+							<td>提交者</td>
+							<td>提交时间</td>
+							<td>状态</td>
+							<td>结果发布</td>
+							<td>操作</td>
+						</tr>
+					</thead>
+					<!--<tr>
+						<td>任务一</td>
+						<td>小小明</td>
+						<td>2017-03-09 12:50:50</td>
+						<td>进行中</td>
+						<td>http:******.cccc</td>
+						<td><a href="#" class="edit_btn">查看</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>
+					<tr>
+						<td>任务一</td>
+						<td>小小明</td>
+						<td>2017-03-09 12:50:50</td>
+						<td>进行中</td>
+						<td>http:******.cccc</td>
+						<td><a href="#" class="edit_btn">查看</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>
+					<tr>
+						<td>任务一</td>
+						<td>小小明</td>
+						<td>2017-03-09 12:50:50</td>
+						<td>进行中</td>
+						<td>http:******.cccc</td>
+						<td><a href="#" class="edit_btn">查看</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>
+					<tr>
+						<td>任务一</td>
+						<td>小小明</td>
+						<td>2017-03-09 12:50:50</td>
+						<td>进行中</td>
+						<td>http:******.cccc</td>
+						<td><a href="#" class="edit_btn">查看</a><a href="#" class="dele_btn">删除</a></td>
+					</tr>-->
+					[#if paraTasks?size gt 0]
+					[#list paraTasks as task]
+					<tr>
+						<td>${task.name}</td>
+						<td>${task.username}</td>
+						<td>${task.sdate}</td>
+						<td>${task.status}</td>
+						<td>${task.down_path}</td>
+						[#if task.status=="待审核"]
+						<td><a href="#" onclick="javascript:etask(${task.id}, 'edit')" class="edit_btn">审核</a><a href="#" onclick="javascript:etask(${task.id}, 'dele')" class="dele_btn">删除</a></td>
+						[#else]
+						<td><a href="#" class="edit_btn">已审核</a><a href="#" onclick="javascript:etask(${task.id}, 'dele')" class="dele_btn">删除</a></td>
+						[/#if]
+
+					</tr>
+					[/#list]
+					[/#if]
+				</table>
+			</div>
+		</div>
+	</div>
+	<div class="footers">
+		<div class="width-con">
+			<div class="bottom-logo">
+				<!-- <img src="./images/pinganLogo.png"> -->
+			</div>
+			<p class="l-footers-p">
+				<span class="foot-mail"><a href="#">163@163.com</a></span><span class="foot-tel">400-000-0000</span><span class="foot-time">09:00-18:00（周一至周五）</span>
+			</p>
+			<p>
+				Copyright © 2017 超算平台 版权所有
+			</p>
+			<div class="l-erweima">
+				<!-- <img src="./images/logo_bottom1.png"> -->
+			</div>
+			<a href="#" class="back-top"></a>
+		</div>
+	</div>
+</body>
+<script src="/${res}/js/jquery-1.11.0.min.js"></script>
+<script src="/${res}/js/verificationNumbers.js" tppabs="js/verificationNumbers.js"></script>
+<script src="/${res}/js/Particleground.js" tppabs="js/Particleground.js"></script>
+<script>
+	$(document).ready(function() {
+		//添加需要的参数
+	});
+	function euser(userid, dele){
+		var form=$("#edit_form");
+		form.attr("action", "${base}/muser.jspx?userid="+userid+"&dele="+dele);
+		form.submit();
+	}
+
+	function etask(tid, dele){
+		var form=$("#edit_form");
+		form.attr("action", "${base}/ptask.jspx?tid="+tid+"&dele="+dele);
+		form.submit();
+	}
+</script>
+</html>

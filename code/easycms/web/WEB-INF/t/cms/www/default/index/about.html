@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超算平台</title>
+	<link rel="stylesheet" href="/${res}/css/style.css">
+</head>
+<body>
+[#include "header.html"/]
+	<div class="header">
+		<div class="header_ct">
+			<ul class="mainmenu">
+				<li>
+					<a href="index.jhtml">首页</a>
+				</li>
+				<li>
+					<a href="product.jhtml">产品服务</a>
+				</li>
+				[#if user??]
+				<li>
+					<a href="business.jhtml">业务办理</a>
+				</li>
+				[/#if]
+				[#if user?? && user.username="admin"]
+				<li>
+					<a href="platform.jhtml">平台管理</a>
+				</li>
+				[/#if]
+				<li class="on">
+					<a href="about.jhtml">关于我们</a>
+				</li>
+				<li>
+					<a href="contact.jhtml">联系我们</a>
+				</li>
+			</ul>
+			
+		</div>
+	</div>
+	<div class="container">
+		<div class="banner_box about_banner"></div>
+		<div class="container_box about">
+			<div class="about_text">
+				<h2><i class="iconfont">&#xe613;</i>公司简介</h2>
+				<p>知并行科技有限公司以复杂计算并行化技术为基础，充分利用超算资源，为行业用户提供算法并行化、超算移植部署等解决方案，并向社会提供基于超算的行业应用服务。</p>
+			</div>
+			<div class="about_text">
+				<h2><i class="iconfont">&#xe725;</i>我们的优势</h2>
+				<p>知并行在行业超算解决方案方面有独特的优势： </p>
+				<ul>
+					<li>丰富的复杂运算并行化能力；</li>
+					<li>强大的超算移植与部署团队；</li>
+					<li>掌握的资源包括国家级超算中心以及100多个私有超算中心的支持；</li>
+					<li>拥有国内顶级软件技术研究机构的支持。</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footers">
+		<div class="width-con">
+			<div class="bottom-logo">
+				<!-- <img src="./images/pinganLogo.png"> -->
+			</div>
+			<p class="l-footers-p">
+				<span class="foot-mail"><a href="#">163@163.com</a></span><span class="foot-tel">400-000-0000</span><span class="foot-time">09:00-18:00（周一至周五）</span>
+			</p>
+			<p>
+				Copyright © 2017 超算平台 版权所有
+			</p>
+			<div class="l-erweima">
+				<!-- <img src="./images/logo_bottom1.png"> -->
+			</div>
+			<a href="#" class="back-top"></a>
+		</div>
+	</div>
+</body>
+</html>

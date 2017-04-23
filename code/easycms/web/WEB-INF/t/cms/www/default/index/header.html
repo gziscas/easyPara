@@ -1,0 +1,17 @@
+<div class="header_top">
+    <div class="header_top_ct">
+        <div class="logo"></div>
+        <div class="login">
+            <!--<a href="login.jhtml">登录</a> |
+            <a href="register.jhtml">注册</a>-->
+            [#if user??]
+            <!--<a><img src="/${res}/images/userImg.png"></a>
+            <a href="${base}/member/index.jspx">会员中心</a>|<a href="${base}/logout.jspx">退出</a>-->
+            <a href="${base}/logout.jspx">退出</a>
+            [#else]
+            <a href="login.jhtml">登录</a> |
+            <a href="register.jhtml">注册</a>
+            [/#if]
+        </div>
+    </div>
+</div>

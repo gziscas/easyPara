@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.easycms.paral.entity">
+	<class name="ParaTask" table="para_task" dynamic-update="true">
+		<meta attribute="sync-DAO">false</meta>
+		<cache usage="read-write"/>
+		<id name="id" type="java.lang.Integer" column="id"><generator class="identity"/></id>
+		<property name="name" column="name" type="string" not-null="false"/>
+		<property name="sdate" column="sdate" type="timestamp" not-null="true"/>
+		<property name="edate" column="edate" type="timestamp"/>
+		<property name="status" column="status" type="string" not-null="true"/>
+		<property name="opera" column="opera" type="string" />
+		<property name="member_id" column="member_id" type="java.lang.Integer" />
+		<property name="username" column="username" type="string" />
+		<property name="up_path" column="up_path" type="string" />
+		<property name="down_path" column="down_path" type="string" />
+		<property name="filename" column="filename" type="string" />
+		<property name="newfilename" column="newfilename" type="string" />
+	</class>
+</hibernate-mapping>

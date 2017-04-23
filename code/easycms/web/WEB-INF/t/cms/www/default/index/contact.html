@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超算平台</title>
+	<link rel="stylesheet" href="/${res}/css/style.css">
+</head>
+<body>
+[#include "header.html"/]
+	<div class="header">
+		<div class="header_ct">
+			<ul class="mainmenu">
+				<li>
+					<a href="index.jhtml">首页</a>
+				</li>
+				<li>
+					<a href="product.jhtml">产品服务</a>
+				</li>
+				[#if user??]
+				<li>
+					<a href="business.jhtml">业务办理</a>
+				</li>
+				[/#if]
+				[#if user?? && user.username="admin"]
+				<li>
+					<a href="platform.jhtml">平台管理</a>
+				</li>
+				[/#if]
+				<li>
+					<a href="about.jhtml">关于我们</a>
+				</li>
+				<li class="on">
+					<a href="contact.jhtml">联系我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="banner_box contact_banner"></div>
+		<div class="container_box about">
+			
+			<div class="about_text">
+				<h2><i class="iconfont">&#xe725;</i>公司：知并行科技有限公司</h2>
+				<ul>
+					<li>联系地址：上海市黄浦区局门路</li>
+					<li>电话：13800138000</li>
+					<li>邮箱：13800138000@qq.com</li>
+					<li>官网：http://********.com</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footers">
+		<div class="width-con">
+			<div class="bottom-logo">
+				<!-- <img src="./images/pinganLogo.png"> -->
+			</div>
+			<p class="l-footers-p">
+				<span class="foot-mail"><a href="#">163@163.com</a></span><span class="foot-tel">400-000-0000</span><span class="foot-time">09:00-18:00（周一至周五）</span>
+			</p>
+			<p>
+				Copyright © 2017 超算平台 版权所有
+			</p>
+			<div class="l-erweima">
+				<!-- <img src="./images/logo_bottom1.png"> -->
+			</div>
+			<a href="#" class="back-top"></a>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+	http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd"
+	default-lazy-init="true">
+	
+	<bean id="dynamicAct" class="com.easycms.cms.action.front.DynamicPageAct"/>
+	<bean id="tagAct" class="com.easycms.cms.action.front.TagAct"/>
+	<bean id="topicAct" class="com.easycms.cms.action.front.TopicAct"/>
+	<bean id="searchAct" class="com.easycms.cms.action.front.SearchAct"/>
+	<bean id="voteAct" class="com.easycms.cms.action.front.VoteAct"/>
+	<bean id="friendlinkAct" class="com.easycms.cms.action.front.FriendlinkAct"/>
+	
+	<bean id="contentCountAct" class="com.easycms.cms.action.front.ContentCountAct"/>
+	<bean id="attachmentAct" class="com.easycms.cms.action.front.AttachmentAct"/>
+	<bean id="commentAct" class="com.easycms.cms.action.front.CommentAct"/>
+	<bean id="guestbookAct" class="com.easycms.cms.action.front.GuestbookAct"/>
+	<bean id="rssAct" class="com.easycms.cms.action.front.RssAct"/>
+	<bean id="csiCustomAct" class="com.easycms.cms.action.front.CsiCustomAct"/>
+	<bean id="advertisingAct" class="com.easycms.cms.action.front.AdvertisingAct"/>
+	
+	<bean id="casLoginAct" class="com.easycms.cms.action.member.CasLoginAct"/>
+	<bean id="loginAct" class="com.easycms.cms.action.member.LoginAct"/>
+	<bean id="memberAct" class="com.easycms.cms.action.member.MemberAct"/>
+	<bean id="contributeAct" class="com.easycms.cms.action.member.ContributeAct"/>
+	<bean id="fckAct" class="com.easycms.cms.action.member.FckAct"/>
+	<bean id="ueditorAct" class="com.easycms.cms.action.member.UeditorAct"/>
+	<bean id="registerAct" class="com.easycms.cms.action.member.RegisterAct"/>
+	<bean id="forgotPasswordAct" class="com.easycms.cms.action.member.ForgotPasswordAct"/>
+	<bean id="imageCutAct" class="com.easycms.cms.action.member.ImageCutAct"/>
+	<bean id="imageUploadAct" class="com.easycms.cms.action.member.ImageUploadAct"/>
+	<bean id="commentMemberAct" class="com.easycms.cms.action.member.CommentMemberAct"/>
+	<bean id="guestbookMemberAct" class="com.easycms.cms.action.member.GuestbookMemberAct"/>
+	<bean id="collectionMemberAct" class="com.easycms.cms.action.member.CollectionMemberAct"/>
+	<bean id="messageAct" class="com.easycms.cms.action.member.MessageAct"/>
+
+	<bean id="siteFlowAct" class="com.easycms.cms.action.front.CmsSiteFlowAct"/>
+	<bean id="resumeAct" class="com.easycms.cms.action.member.ResumeAct"/>
+	<bean id="visualAct" class="com.easycms.cms.action.front.VisualAct"/>
+	<bean id="swfUploadAct" class="com.easycms.cms.action.member.SwfUploadAct"/>
+	<bean id="contentScoreAct" class="com.easycms.cms.action.front.ContentScoreAct"/>
+	<bean id="thirdLoginAct" class="com.easycms.cms.action.front.ThirdLoginAct"/>
+	<bean id="staticPageCheckPermAct" class="com.easycms.cms.action.front.StaticPageCheckPermAct"/>
+	<bean id="channelCountAct" class="com.easycms.cms.action.front.ChannelCountAct"/>
+	<bean id="dimensionCodeAct" class="com.easycms.cms.action.front.DimensionCodeAct"/>
+	<bean id="contentOrderAct" class="com.easycms.cms.action.front.ContentOrderAct"/>
+	<bean id="accountDrawAct" class="com.easycms.cms.action.member.AccountDrawAct"/>
+	<bean id="weiXinAuthAct" class="com.easycms.cms.action.member.WeiXinAuthAct"/>
+	<bean id="userContentBuyAct" class="com.easycms.cms.action.member.UserContentBuyAct"/>
+	
+	<!-- API -->
+	<bean id="uploadApiAct" class="com.easycms.cms.api.UploadApiAct"/>
+	<bean id="contentApiAct" class="com.easycms.cms.api.ContentApiAct"/>
+	<bean id="channelApiAct" class="com.easycms.cms.api.ChannelApiAct"/>
+	<bean id="userApiAct" class="com.easycms.cms.api.UserApiAct"/>
+	<bean id="topicApiAct" class="com.easycms.cms.api.TopicApiAct"/>
+	<bean id="searchApiAct" class="com.easycms.cms.api.SearchApiAct"/>
+	<bean id="contentTagApiAct" class="com.easycms.cms.api.ContentTagApiAct"/>
+	<bean id="cmsSearchWordApiAct" class="com.easycms.cms.api.CmsSearchWordApiAct"/>
+	<bean id="cmsFriendlinkApiAct" class="com.easycms.cms.api.CmsFriendlinkApiAct"/>
+	<bean id="cmsAdApiAct" class="com.easycms.cms.api.CmsAdApiAct"/>
+	<bean id="cmsCommentApiAct" class="com.easycms.cms.api.CmsCommentApiAct"/>
+	<bean id="cmsGuestbookApiAct" class="com.easycms.cms.api.CmsGuestbookApiAct"/>
+	<bean id="cmsVoteApiAct" class="com.easycms.cms.api.CmsVoteApiAct"/>
+	<bean id="contentCollectionApiAct" class="com.easycms.cms.api.ContentCollectionApiAct"/>
+	<bean id="dictionaryApiAct" class="com.easycms.cms.api.DictionaryApiAct"/>
+	<bean id="resumeApiAct" class="com.easycms.cms.api.ResumeApiAct"/>
+	<bean id="messageApiAct" class="com.easycms.cms.api.MessageApiAct"/>
+	<bean id="contentOrderApiAct" class="com.easycms.cms.api.ContentOrderApiAct"/>
+	<bean id="accountApiAct" class="com.easycms.cms.api.AccountApiAct"/>
+
+	<bean id="easyParaAct" class="com.easycms.paral.front.EasyParaAct"/>
+	<bean id="easyParaService" class="com.easycms.paral.service.EasyParaServiceImpl"/>
+	<bean id="easyParaDao" class="com.easycms.paral.service.EasyParaDaoImpl"/>
+</beans>

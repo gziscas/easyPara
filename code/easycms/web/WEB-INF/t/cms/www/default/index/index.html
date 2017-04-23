@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>超算平台</title>
+	<link rel="stylesheet" href="/${res}/css/style.css">
+</head>
+<body>
+[#include "header.html"/]
+	<div class="header">
+		<div class="header_ct">
+			<ul class="mainmenu">
+				<li class="on">
+					<a href="index.jhtml">首页</a>
+				</li>
+				<li>
+					<a href="product.jhtml">产品服务</a>
+				</li>
+				[#if user??]
+				<li>
+					<a href="business.jhtml">业务办理</a>
+				</li>
+				[/#if]
+				[#if user?? && user.username="admin"]
+				<li>
+					<a href="platform.jhtml">平台管理</a>
+				</li>
+				[/#if]
+				<li>
+					<a href="about.jhtml">关于我们</a>
+				</li>
+				<li>
+					<a href="contact.jhtml">联系我们</a>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<div class="container">
+		<div class="custom">
+			<div class="banner">
+				<ul>
+					<li><img src="/${res}/images/banner-1.jpg"></li>
+					<li><img src="/${res}/images/banner-2.jpg"></li>
+					<li><img src="/${res}/images/banner-3.jpg"></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<div class="footers">
+		<div class="width-con">
+			<div class="bottom-logo">
+				<!-- <img src="/${res}/images/pinganLogo.png"> -->
+			</div>
+			<p class="l-footers-p">
+				<span class="foot-mail"><a href="#">163@163.com</a></span><span class="foot-tel">400-000-0000</span><span class="foot-time">09:00-18:00（周一至周五）</span>
+			</p>
+			<p>
+				Copyright © 2017 超算平台 版权所有
+			</p>
+			<div class="l-erweima">
+				<!-- <img src="./images/logo_bottom1.png"> -->
+			</div>
+			<a href="#" class="back-top"></a>
+		</div>
+	</div>
+	<script src="/${res}/js/jquery-1.11.0.min.js"></script>
+	<script src="/${res}/js/jquery.terseBanner.min.js"></script>
+	<script>
+		$('.banner').terseBanner();
+	</script>
+</body>
+</html>

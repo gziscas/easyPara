@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>登录页</title>
+	<link rel="stylesheet" href="/${res}/css/style.css">
+	<link rel="stylesheet" type="text/css" href="/${res}/css/login.css" />
+	<style>
+
+body{height:100%;background:#16a085;}
+canvas{z-index:-1;position:absolute; top:0;}
+</style>
+</head>
+<body>
+<form id="jvForm" action="${base}/login.jspx" method="post">
+
+	<dl class="admin_login">
+		 <dt>
+		  <strong>用户登录</strong>
+		  <em>User Login</em>
+			<strong>
+				[#if message??]
+
+				[#if message=="true"]
+				您必须登录后才能继续刚才的操作
+				[#else]
+				${message}
+				[/#if]
+				<input type="hidden" name="message" value="${message}"/>
+				[/#if]
+
+				[#if processUrl??]<input type="hidden" name="processUrl" value="${processUrl}"/>[/#if]
+				[#if returnUrl??]<input type="hidden" name="returnUrl" value="${returnUrl}"/>[#else]<input type="hidden" name="returnUrl" value="/"/>[/#if]
+				[#if error??]
+				<div class="error-message">
+					[#if error=="org.apache.shiro.authc.IncorrectCredentialsException"]
+					[@s.m "error.invalidPassword"/]
+					[#elseif error=="org.apache.shiro.authc.UnknownAccountException"]
+					[@s.m "error.usernameNotExist"/]
+					[#elseif error=="com.easycms.common.security.CaptchaErrorException"]
+					[@s.m "error.invalidCaptcha"/]
+					[#elseif error=="com.easycms.common.security.DisabledException"]
+					[@s.m "error.userDisabled"/]
+					[#elseif error=="com.easycms.common.security.InactiveException"]
+					[@s.m "error.userInActive"/]
+					[/#if]
+					<div class="error-message">
+				[/#if]
+				[#if success??]
+				[#if success]
+				注册成功！
+				[/#if]
+
+				[/#if]
+			</strong>
+		 </dt>
+		 <dd class="user_icon">
+		  <input type="text" id="username" name="username" placeholder="请输入账号" class="login_txtbx"/>
+		 </dd>
+		 <dd class="pwd_icon">
+		  <input type="password" id="password" name="password" value="123" class="login_txtbx"/>
+		 </dd>
+		 <dd class="val_icon">
+		  <div class="checkcode">
+		    <input type="text" id="J_codetext" placeholder="请输入验证码" maxlength="4" class="login_txtbx">
+		    <canvas class="J_codeimg" id="myCanvas" onclick="createCode()">对不起，您的浏览器不支持canvas，请下载最新版浏览器!</canvas>
+		  </div>
+		  <input type="button" value="看不清换一个" class="ver_btn" onClick="createCode();">
+		 </dd>
+		 <dd>
+		  <input type="button" value="立即登陆" class="submit_btn"/>
+		 </dd>
+		  <dd>
+		  <a href="register.jhtml" class="register">注册</a>
+		 </dd>
+	</dl>
+	</form>
+</body>
+<script src="/${res}/js/jquery-1.11.0.min.js"></script>
+<script src="/${res}/js/verificationNumbers.js" tppabs="js/verificationNumbers.js"></script>
+<script src="/${res}/js/Particleground.js" tppabs="js/Particleground.js"></script>
+<script>
+$(document).ready(function() {
+  //粒子背景特效
+  $('body').particleground({
+    dotColor: '#5cbdaa',
+    lineColor: '#5cbdaa'
+  });
+  //验证码
+  createCode();
+  //测试提交，对接程序删除即可
+  $(".submit_btn").click(function(){
+  	var plen = $("#password").val();
+	  if(plen.length>1 && plen=="123"){
+	  	alert(545);
+	  }
+	  if(!validate()){
+		  alert('请输入正确的验证码');
+	  } else {
+		  $("#jvForm").submit();
+	  }
+  });
+});
+</script>
+</html>
